@@ -1,86 +1,84 @@
 import React from "react";
 
 const packages = [
-  // Tour Packages First
   {
-    title: "Thailand Adventure",
+    title: "Santorini Escape",
     price: "Rs 250000",
     duration: "5 Days",
     rating: 4.92,
     country: "Thailand",
-    image: "/packages/pkg1.jpg",
+    image: "pkg1.png",
     description:
       "Experience tropical beaches, vibrant nightlife, and exotic Thai culture.",
   },
   {
-    title: "Baku Luxury Tour",
+    title: "Dubai Luxury Tour",
     price: "Rs 180000",
     duration: "4 Days",
     rating: 4.0,
     country: "Baku",
-    image: "/packages/pkg2.jpg",
+    image: "pkg2.png",
     description:
       "Explore Baku’s rich history, luxury shopping, and modern skyline.",
   },
   {
-    title: "London Tour",
-    price: "Rs 98500/198500",
-    // duration: "6 Nights",
+    title: "Bali Serenity",
+    price: "Rs 98500",
+    duration: "6 Nights/7 Days",
     rating: 4.92,
     country: "London",
-    image: "/packages/pkg7.jpg",
+    image: "pkg7.png",
     description:
       "Visit iconic landmarks, museums, and enjoy high-street shopping in London.",
   },
 
-  // Visa Packages After
   {
-    title: "E-Visa",
+    title: "Paris Romance",
     price: "Call Now",
-    duration: "Consultation",
+    duration: "4 Days",
     rating: 5.0,
-    country: "Various Countries",
-    image: "/packages/pkg3.jpg",
+    country: "USA",
+    image: "pkg3.png",
     description:
       "Quick and hassle-free e-visa processing for multiple destinations.",
   },
   {
-    title: "USA Visa",
+    title: "Maldives Getaway",
     price: "Rs 25000",
-    duration: "Consultation",
+    duration: "30/60 Days",
     rating: 4.98,
     country: "USA",
-    image: "/packages/pkg4.jpg",
+    image: "pkg4.png",
     description:
       "Comprehensive support for your U.S. tourist and business visa needs.",
   },
   {
-    title: "Dubai Visit Visa",
+    title: "Swiss Alps Retreat",
     price: "Price Varies",
-    duration: "30/60 Days",
+    duration: "5 Days",
     rating: 4.92,
     country: "Dubai",
-    image: "/packages/pkg5.jpg",
+    image: "pkg5.png",
     description:
       "Get Dubai visit visas for short or long-term travel, stress-free.",
   },
   {
-    title: "Europe Visa",
+    title: "Culpa est similique",
     price: "Rs 25000",
-    duration: "Consultation",
+    duration: "7 Days",
     rating: 4.92,
     country: "EU",
-    image: "/packages/pkg6.jpg",
+    image: "pkg6.png",
     description:
       "Assistance with Schengen visas for smooth entry into European countries.",
   },
   {
-    title: "UK Visa",
+    title: "Culpa est similique",
     price: "Rs 25000",
-    duration: "Consultation",
+    duration: "3 Days",
     rating: 4.92,
     country: "UK",
-    image: "/packages/pkg8.jpg",
+    image: "pkg8.png",
     description:
       "Expert guidance on UK tourist, student, or business visa applications.",
   },
@@ -91,7 +89,7 @@ const renderPackageCard = (pkg, index) => (
     key={index}
     className="bg-[#F6F6F6] overflow-hidden hover:shadow-lg transition-shadow duration-300"
   >
-    <img src={pkg.image} alt={pkg.title} className="w-full h-70 object-cover" />
+    <img src={pkg.image} alt={pkg.title} className="w-full h-50 object-cover" />
     <div className="p-4 space-y-1">
       <div className="flex justify-between items-center">
         <h3 className="text-lg font-semibold">{pkg.title}</h3>
