@@ -10,6 +10,7 @@ import BestDeals from "./components/BestDeals";
 import Footer from "./components/common/Footer";
 import Testimonials from "./components/Testimonials";
 import Destinations from "./components/Destinations";
+import CuratedPackages from "./components/CuratedPackages";
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
         <TopPackages />
         <MostSearched />
         <BestDeals />
+        <CuratedPackages />
         <Testimonials />
         <Destinations />
         <Footer />
