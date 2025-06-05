@@ -89,7 +89,7 @@ const CuratedPackages = () => {
                 <img
                   src={pkg.img}
                   alt={pkg.title}
-                  className="w-full h-80 object-cover rounded-xl mb-4"
+                  className="w-full h-80 xl:h-86 object-cover rounded-xl mb-4"
                 />
                 <p className="text-lg font-medium">{pkg.title}</p>
               </div>
