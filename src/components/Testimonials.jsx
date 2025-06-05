@@ -49,76 +49,79 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
-    <section className="py-16 bg-white font-dm" id="testimonials">
-      <div className="text-center mb-10">
-        <h2 className="text-2xl md:text-3xl font-semibold text-gray-800">
-          What Our Client Says
-        </h2>
-      </div>
+    <section
+      className="py-16 px-4 md:px-12 lg:px-20 font-dm max-w-[1536px] mx-auto overflow-hidden"
+      id="testimonials"
+    >
+      <h2 className="text-3xl font-semibold text-center text-gray-800 mb-8">
+        What Our <span className="text-[#EB662B]">Customers Say</span>
+      </h2>
 
-      <div className="px-4 max-w-6xl mx-auto py-10 ">
-        <Swiper
-          spaceBetween={24}
-          modules={[Autoplay]}
-          autoplay={{
-            delay: 2000,
-            disableOnInteraction: false,
-          }}
-          breakpoints={{
-            640: { slidesPerView: 1 },
-            768: { slidesPerView: 2 },
-            1024: { slidesPerView: 3 },
-          }}
-        >
-          {testimonials.map((testimonial, idx) => (
-            <SwiperSlide key={idx}>
-              <div
-                className={`bg-[#F9FAFB] shadow-md p-6 my-2 w-full max-w-sm mx-auto transition-all duration-300 cursor-grab active:cursor-grabbing h-fit py-10  rounded-[70px] flex justify-center flex-col gap-10 ${
-                  idx % 2 === 0 ? "md:mt-6" : "md:mt-1"
-                }`}
-              >
-                <div className="flex items-center gap-4 mb-4">
-                  <img
-                    src={testimonial.image}
-                    alt={testimonial.name}
-                    className="w-12 h-12 rounded-full object-cover"
-                  />
-                  <div>
-                    <h4 className="font-semibold text-gray-800">
-                      {testimonial.name}
-                    </h4>
-                    <div className="text-[#EB662B] text-sm">
-                      {"★".repeat(testimonial.rating)}
-                    </div>
+      <Swiper
+        modules={[Autoplay]}
+        autoplay={{
+          delay: 3000,
+          disableOnInteraction: false,
+        }}
+        loop={true}
+        centeredSlides={true}
+        initialSlide={1}
+        slidesPerView={1}
+        spaceBetween={20}
+        breakpoints={{
+          640: { slidesPerView: 1.3 },
+          768: { slidesPerView: 2.3 },
+          1024: { slidesPerView: 3 },
+        }}
+        className="pb-8"
+      >
+        {testimonials.map((testimonial, index) => (
+          <SwiperSlide key={index}>
+            <div className="testimonial-card bg-[#F9FAFB] shadow-md p-6 my-2 w-full max-w-sm mx-auto transition-all duration-300 cursor-grab active:cursor-grabbing h-fit py-10 rounded-[70px] flex justify-center flex-col gap-10 md:mt-6">
+              <div className="flex items-center gap-4 mb-4 ">
+                <img
+                  src={testimonial.image}
+                  alt={testimonial.name}
+                  className="w-12 h-12 rounded-full object-cover"
+                />
+                <div>
+                  <h4 className="font-semibold text-gray-800">
+                    {testimonial.name}
+                  </h4>
+                  <div className="text-[#EB662B] text-sm">
+                    {"★".repeat(testimonial.rating)}
                   </div>
                 </div>
-                <p className="text-sm text-gray-600 mb-4">
-                  {testimonial.message}
-                </p>
-                <div className="flex items-center justify-between mt-4">
-                  <span className="bg-[#EB662B] text-white text-xs px-3 py-1 rounded-full">
-                    {testimonial.location}
-                  </span>
-                  <span className="text-[#EB662B] text-xl">
-                    <img
-                      src="Comms-Vector.png"
-                      alt=""
-                      className="w-[16px] h-[12.2px] object-cover"
-                    />
-                  </span>
-                </div>
               </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </div>
+              <p className="text-sm text-gray-600 mb-4">
+                {testimonial.message}
+              </p>
+              <div className="flex items-center justify-between mt-4">
+                <span className="bg-[#EB662B] text-white text-xs px-3 py-1 rounded-full">
+                  {testimonial.location}
+                </span>
+                <span className="text-[#EB662B] text-xl">
+                  <img
+                    src="Comms-Vector.png"
+                    alt=""
+                    className="w-[16px] h-[12.2px] object-cover"
+                  />
+                </span>
+              </div>
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
 
-      {/* Dots */}
-      <div className="flex justify-center mt-8 space-x-2">
-        <span className="w-4 h-2 bg-[#EB662B] rounded-full"></span>
-        <span className="w-2 h-2 bg-orange-200 rounded-full"></span>
-        <span className="w-2 h-2 bg-orange-200 rounded-full"></span>
-      </div>
+      {/* Highlight center slide */}
+      <style jsx>{`
+        .swiper-slide-active .swiper-slide-content {
+          transform: scale(1.1);
+          z-index: 10;
+          box-shadow: 0 20px 25px -5px rgba(235, 102, 43, 0.15),
+            0 10px 10px -5px rgba(235, 102, 43, 0.1);
+        }
+      `}</style>
     </section>
   );
 };

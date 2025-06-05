@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#fff2ed] text-gray-800 w-[98%] mx-auto rounded-2xl py-10 mt-6 mb-2 px-6 md:px-4">
+    <footer className="bg-[#fff2ed] text-gray-800 w-[98%] mx-auto rounded-2xl py-10 mt-6 mb-2 px-6 md:px-20">
       <div className="max-w-7xl mx-auto">
         <div className="">
           {/* Logo & Newsletter */}
@@ -20,7 +20,7 @@ const Footer = () => {
           </div>
 
           {/* Links Section */}
-          <div className="flex flex-wrap lg:flex-nowrap justify-between gap-10 lg:justify-start lg:gap-34 xl:gap-38 lg:pl-10 mt-8">
+          <div className="flex flex-wrap lg:flex-nowrap justify-between gap-10 lg:justify-start lg:gap-26 xl:gap-38 lg:pl-10 mt-8">
             <div>
               <h3 className="font-semibold mb-2 font-sansita">Newsletter</h3>
               <p className="text-sm mb-2 font-dm">

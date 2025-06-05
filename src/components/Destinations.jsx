@@ -125,7 +125,7 @@ const Destinations = () => {
                   src={src}
                   alt={`Destination ${index + 4}`}
                   loading="lazy"
-                  className="w-full h-[16.2rem] xl:h-[20.4rem] aspect-square object-cover hover:scale-105 transition-transform duration-300"
+                  className="w-full h-[16.2rem] xl:h-[16.4rem] aspect-square object-cover hover:scale-105 transition-transform duration-300"
                 />
               </div>
             ))}
