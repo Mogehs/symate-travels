@@ -15,14 +15,22 @@ const Navbar = () => {
 
       {/* Desktop Nav Links */}
       <div className="hidden lg:flex gap-8 text-gray-700 text-sm mr-18 font-dm">
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Contact</a>
-        <a href="#">Blog</a>
+        <a href="#" onClick={() => setIsOpen(false)}>
+          Home
+        </a>
+        <a href="#about" onClick={() => setIsOpen(false)}>
+          About
+        </a>
+        <a href="#testimonials" onClick={() => setIsOpen(false)}>
+          Testimonials
+        </a>
+        <a href="#contact" onClick={() => setIsOpen(false)}>
+          Contact Us
+        </a>
       </div>
 
       {/* Sign In / Sign Up */}
-      <div className="hidden lg:flex items-center gap-4 font-dm">
+      {/* <div className="hidden lg:flex items-center gap-4 font-dm">
         <a href="#" className="text-sm font-medium text-gray-700">
           Sign In
         </a>
@@ -32,7 +40,7 @@ const Navbar = () => {
         >
           Sign Up
         </a>
-      </div>
+      </div> */}
 
       {/* Hamburger Icon */}
       <div className="lg:hidden mt-1">
@@ -62,19 +70,35 @@ const Navbar = () => {
       {/* Mobile Dropdown Menu */}
       {isOpen && (
         <div className="absolute top-[85px] left-0 w-full bg-white shadow-lg px-6 py-4 flex flex-col gap-4 lg:hidden z-40 font-dm">
-          <a href="#" className="text-gray-700 text-sm">
+          <a
+            href="#"
+            className="text-gray-700 text-sm"
+            onClick={() => setIsOpen(false)}
+          >
             Home
           </a>
-          <a href="#" className="text-gray-700 text-sm">
+          <a
+            href="#about"
+            className="text-gray-700 text-sm"
+            onClick={() => setIsOpen(false)}
+          >
             About
           </a>
-          <a href="#" className="text-gray-700 text-sm">
-            Contact
+          <a
+            href="#testimonials"
+            className="text-gray-700 text-sm"
+            onClick={() => setIsOpen(false)}
+          >
+            Testimonials
           </a>
-          <a href="#" className="text-gray-700 text-sm">
-            Blog
+          <a
+            href="#contact"
+            className="text-gray-700 text-sm"
+            onClick={() => setIsOpen(false)}
+          >
+            Contact Us
           </a>
-          <hr />
+          {/* <hr />
           <a href="#" className="text-sm font-medium text-gray-700">
             Sign In
           </a>
@@ -83,7 +107,7 @@ const Navbar = () => {
             className="bg-[#EB662B] text-white px-2 py-2 rounded-md text-sm hover:bg-[#EB662B]/80"
           >
             Sign Up
-          </a>
+          </a> */}
         </div>
       )}
     </nav>

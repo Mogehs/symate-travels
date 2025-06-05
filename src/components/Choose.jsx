@@ -2,22 +2,22 @@ import React from "react";
 
 const features = [
   {
-    icon: "🛫",
+    icon: "glob.png",
     title: "Trusted By Thousands Of Travelers",
     desc: "Proven Reliability With Happy Travelers Worldwide.",
   },
   {
-    icon: "💰",
+    icon: "coin.png",
     title: "Exclusive Deals & Best Price Guarantee",
     desc: "Top Offers With Prices You Won’t Find Elsewhere.",
   },
   {
-    icon: "🕒",
+    icon: "time.png",
     title: "24/7 Personal Travel Concierge",
     desc: "Support Anytime, Anywhere — Always On.",
   },
   {
-    icon: "🔒",
+    icon: "date.png",
     title: "One-Click Secure Booking",
     desc: "Fast, Safe, And Hassle-Free Reservations.",
   },
@@ -64,8 +64,10 @@ const WhyChooseUs = () => {
                 key={index}
                 className="flex items-start gap-4 cursor-pointer hover:shadow-2xl hover:scale-101 sm:w-[88%] rounded-lg transition-all duration-300 p-4 bg-white shadow-sm"
               >
-                <div className="text-2xl">{item.icon}</div>
-                <div className="bg-[#EB662B] w-[2px] h-[40px]"></div>
+                <div className="text-2xl">
+                  <img src={item.icon} alt="icon" className="w-[50px]" />
+                </div>
+                <div className="bg-[#EB662B] w-[2px] h-[50px]"></div>
                 <div>
                   <h3 className="font-semibold text-lg text-black">
                     {item.title}

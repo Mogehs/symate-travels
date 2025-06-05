@@ -49,7 +49,7 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
-    <section className="py-16 bg-white font-dm">
+    <section className="py-16 bg-white font-dm" id="testimonials">
       <div className="text-center mb-10">
         <h2 className="text-2xl md:text-3xl font-semibold text-gray-800">
           What Our Client Says
@@ -73,7 +73,7 @@ const Testimonials = () => {
           {testimonials.map((testimonial, idx) => (
             <SwiperSlide key={idx}>
               <div
-                className={`bg-gray-200 rounded-2xl shadow-md p-6 my-2 w-full max-w-sm mx-auto transition-all duration-300 cursor-grab active:cursor-grabbing ${
+                className={`bg-[#F9FAFB] shadow-md p-6 my-2 w-full max-w-sm mx-auto transition-all duration-300 cursor-grab active:cursor-grabbing h-fit py-10  rounded-[70px] flex justify-center flex-col gap-10 ${
                   idx % 2 === 0 ? "md:mt-6" : "md:mt-1"
                 }`}
               >
@@ -99,7 +99,13 @@ const Testimonials = () => {
                   <span className="bg-[#EB662B] text-white text-xs px-3 py-1 rounded-full">
                     {testimonial.location}
                   </span>
-                  <span className="text-[#EB662B] text-xl">”</span>
+                  <span className="text-[#EB662B] text-xl">
+                    <img
+                      src="Comms-Vector.png"
+                      alt=""
+                      className="w-[16px] h-[12.2px] object-cover"
+                    />
+                  </span>
                 </div>
               </div>
             </SwiperSlide>

@@ -4,7 +4,10 @@ import Achievements from "./Achievements";
 const AboutUs = () => {
   return (
     <>
-      <section className="flex flex-col lg:flex-row items-center justify-between px-6 py-12 lg:px-20 gap-10 bg-white font-dm">
+      <section
+        id="about"
+        className="flex flex-col lg:flex-row items-center justify-between px-6 py-12 lg:px-20 gap-10 bg-white font-dm"
+      >
         {/* Left Text Section */}
         <div className="lg:w-1/2 text-center lg:text-left">
           <h3 className="text-sm text-[#EB662B] tracking-widest uppercase mb-3">

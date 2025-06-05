@@ -30,19 +30,13 @@ const CuratedPackages = () => {
       <div className="relative">
         {/* Custom Nav Buttons */}
         <div className="absolute top-1/2 -translate-y-1/2 left-[-32px] md:left-[-40px] z-10">
-          <button
-            ref={prevRef}
-            className="text-neutral-600 text-3xl font-bold px-2 py-1 cursor-pointer"
-          >
-            <ChevronLeft />
+          <button className="text-neutral-600 text-3xl font-bold px-2 py-1 cursor-pointer">
+            <ChevronLeft ref={prevRef} />
           </button>
         </div>
         <div className="absolute top-1/2 -translate-y-1/2 right-[-32px] md:right-[-40px] z-10">
-          <button
-            ref={nextRef}
-            className="text-neutral-600 text-3xl font-bold px-2 py-1 cursor-pointer"
-          >
-            <ChevronRight />
+          <button className="text-neutral-600 text-3xl font-bold px-2 py-1 cursor-pointer">
+            <ChevronRight ref={nextRef} />
           </button>
         </div>
 
