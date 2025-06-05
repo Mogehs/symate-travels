@@ -3,6 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const packages = [
   { title: "Thailand 5 Days Tour", img: "/packages/pkg1.jpg" },
@@ -30,17 +31,17 @@ const CuratedPackages = () => {
         <div className="absolute top-1/2 -translate-y-1/2 left-[-32px] md:left-[-40px] z-10">
           <button
             ref={prevRef}
-            className="text-neutral-600 text-3xl font-bold px-2 py-1"
+            className="text-neutral-600 text-3xl font-bold px-2 py-1 cursor-pointer"
           >
-            &#10094;
+            <ChevronLeft />
           </button>
         </div>
         <div className="absolute top-1/2 -translate-y-1/2 right-[-32px] md:right-[-40px] z-10">
           <button
             ref={nextRef}
-            className="text-neutral-600 text-3xl font-bold px-2 py-1"
+            className="text-neutral-600 text-3xl font-bold px-2 py-1 cursor-pointer"
           >
-            &#10095;
+            <ChevronRight />
           </button>
         </div>
 
@@ -87,7 +88,6 @@ const CuratedPackages = () => {
         </Swiper>
       </div>
 
-      {/* Tailwind style override for active slide */}
       <style jsx>{`
         .swiper-slide-active .swiper-slide-content {
           transform: scale(1.1);

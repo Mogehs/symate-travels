@@ -11,6 +11,8 @@ import Footer from "./components/common/Footer";
 import Testimonials from "./components/Testimonials";
 import Destinations from "./components/Destinations";
 import CuratedPackages from "./components/CuratedPackages";
+import Map from "./components/Map";
+import DestinationHighlights from "./components/Destination";
 
 const App = () => {
   return (
@@ -25,6 +27,8 @@ const App = () => {
         <MostSearched />
         <BestDeals />
         <CuratedPackages />
+        <DestinationHighlights />
+        <Map />
         <Testimonials />
         <Destinations />
         <Footer />
