@@ -84,12 +84,12 @@ const CuratedPackages = () => {
                 className="transition-transform duration-300 transform bg-white p-4 text-center my-10 relative rounded-xl swiper-slide-content
       shadow-md hover:shadow-xl hover:shadow-orange-300/40 ml-4"
               >
-                <div className="border-white border-[2px] h-90 w-[88%] absolute left-1/2 -translate-x-1/2 top-6 rounded-lg"></div>
+                <div className="border-white border-[2px] h-78 w-[84%] sm:w-[88%] absolute left-1/2 -translate-x-1/2 top-5 rounded-lg"></div>
 
                 <img
                   src={pkg.img}
                   alt={pkg.title}
-                  className="w-full h-90 object-cover rounded-xl mb-4"
+                  className="w-full h-80 object-cover rounded-xl mb-4"
                 />
                 <p className="text-lg font-medium">{pkg.title}</p>
               </div>
