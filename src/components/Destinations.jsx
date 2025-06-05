@@ -47,7 +47,7 @@ const Destinations = () => {
   const [activeTab, setActiveTab] = useState("London");
 
   return (
-    <section className="py-16 px-4 md:px-12 font-dm">
+    <section className="py-16 px-4 md:px-6 lg:px-20 font-dm mb-20">
       <div className="text-center mb-10">
         <h2 className="text-3xl md:text-4xl font-bold text-gray-800">
           Destinations Of <span className="text-[#EB662B]">The Month</span>
@@ -125,7 +125,7 @@ const Destinations = () => {
                   src={src}
                   alt={`Destination ${index + 4}`}
                   loading="lazy"
-                  className="w-full h-[17.2rem] aspect-square object-cover hover:scale-105 transition-transform duration-300"
+                  className="w-full h-[16.2rem] xl:h-[21rem] aspect-square object-cover hover:scale-105 transition-transform duration-300"
                 />
               </div>
             ))}

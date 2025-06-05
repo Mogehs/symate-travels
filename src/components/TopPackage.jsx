@@ -117,7 +117,7 @@ const renderPackageCard = (pkg, index) => (
 
 export default function TopPackages() {
   return (
-    <section className="px-8 py-10 bg-white font-dm">
+    <section className="px-6 lg:px-20 py-10 bg-white font-dm">
       <h2 className="text-2xl sm:text-3xl font-semibold mb-10 text-gray-800">
         Top Package <span className="text-[#EB662B]">Destinations</span>
       </h2>

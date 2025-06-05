@@ -29,22 +29,22 @@ const deals = [
 
 export default function BestDeals() {
   return (
-    <section className="bg-white px-8 py-12 font-dm">
+    <section className="bg-white px-4 sm:px-6 lg:px-20 py-12 font-dm max-w-[1536px] mx-auto">
       <h2 className="text-2xl sm:text-3xl font-semibold mb-8 text-gray-800">
         Best Deal <span className="text-[#EB662B]">Destinations</span>
       </h2>
 
-      {/* Cards */}
-      <div className="flex flex-wrap gap-8 justify-center mb-16">
+      {/* Responsive Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {deals.map((deal, idx) => (
           <div
             key={idx}
-            className="w-full sm:w-[45%] md:w-[22%] bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow"
+            className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow"
           >
             <img
               src={deal.image}
               alt={deal.title}
-              className="w-full h-68 object-cover"
+              className="w-full h-64 object-cover"
             />
             <div className="p-4">
               <h3 className="text-lg font-semibold text-gray-800">

@@ -33,7 +33,7 @@ const Achievements = () => {
           {stats.map((item, index) => (
             <div
               key={index}
-              className="bg-white border border-[#EB662B] shadow-md hover:shadow-2xl cursor-pointer hover:shadow-[#EB662B] transition-all duration-75 shadow-[#EB662B] rounded-2xl px-6 py-6 text-center w-full sm:w-[200px] flex flex-col items-center"
+              className="bg-white border border-[#EB662B] shadow-md hover:shadow-2xl cursor-pointer hover:shadow-[#EB662B] transition-all duration-200 rounded-2xl px-6 py-6 text-center w-full sm:w-[200px] flex flex-col items-center"
             >
               <h3 className="text-2xl font-extrabold text-[#EB662B]">
                 {item.value}

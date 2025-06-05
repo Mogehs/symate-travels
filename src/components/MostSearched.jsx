@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
+import { Navigation, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import { CircleArrowLeft, CircleArrowRight } from "lucide-react";
@@ -41,7 +41,7 @@ export default function MostSearched() {
   const nextRef = useRef(null);
 
   return (
-    <section className="px-8 py-12 bg-gray-100 my-10 font-dm">
+    <section className="py-12 bg-gray-100 my-10 font-dm px-6 md:px-12 lg:px-20">
       <div className="flex justify-between items-center mb-6">
         <h2 className="text-2xl font-semibold text-gray-800">
           The Most Searched For{" "}
@@ -71,19 +71,21 @@ export default function MostSearched() {
         breakpoints={{
           640: { slidesPerView: 1 },
           768: { slidesPerView: 2 },
-          1024: { slidesPerView: 3 },
-          1280: { slidesPerView: 4 },
+          1024: { slidesPerView: 4 },
         }}
         navigation={{
           prevEl: prevRef.current,
           nextEl: nextRef.current,
         }}
+        autoplay={{
+          delay: 2000,
+          disableOnInteraction: false,
+        }}
         onBeforeInit={(swiper) => {
-          // connect swiper navigation manually
           swiper.params.navigation.prevEl = prevRef.current;
           swiper.params.navigation.nextEl = nextRef.current;
         }}
-        modules={[Navigation]}
+        modules={[Navigation, Autoplay]}
       >
         {cities.map((city, index) => (
           <SwiperSlide key={index}>

@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
+import { Navigation, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import { ChevronLeft, ChevronRight } from "lucide-react";
@@ -14,6 +14,7 @@ const packages = [
   { title: "Europe Visa", img: "/packages/pkg6.jpg" },
   { title: "London Tour", img: "/packages/pkg7.jpg" },
   { title: "UK Visa", img: "/packages/pkg8.jpg" },
+  { title: "UK Visa", img: "/packages/pkg8.jpg" },
 ];
 
 const CuratedPackages = () => {
@@ -21,7 +22,7 @@ const CuratedPackages = () => {
   const nextRef = useRef(null);
 
   return (
-    <section className="py-16 px-4 md:px-12 font-dm max-w-[1536px] mx-auto overflow-hidden">
+    <section className="py-16 px-4 md:px-12 lg:px-20 font-dm max-w-[1536px] mx-auto overflow-hidden">
       <h2 className="text-3xl font-semibold text-center text-gray-800 mb-8">
         Explore Our <span className="text-orange-500">Curated Packages</span>
       </h2>
@@ -46,7 +47,7 @@ const CuratedPackages = () => {
         </div>
 
         <Swiper
-          modules={[Navigation]}
+          modules={[Navigation, Autoplay]}
           onBeforeInit={(swiper) => {
             swiper.params.navigation.prevEl = prevRef.current;
             swiper.params.navigation.nextEl = nextRef.current;
@@ -55,10 +56,15 @@ const CuratedPackages = () => {
             prevEl: prevRef.current,
             nextEl: nextRef.current,
           }}
+          autoplay={{
+            delay: 2000,
+            disableOnInteraction: false,
+          }}
+          loop={true}
+          centeredSlides={true}
+          initialSlide={1}
           slidesPerView={1}
           spaceBetween={20}
-          centeredSlides={true}
-          className="pb-8"
           breakpoints={{
             640: {
               slidesPerView: 1.3,
@@ -70,6 +76,7 @@ const CuratedPackages = () => {
               slidesPerView: 3,
             },
           }}
+          className="pb-8"
         >
           {packages.map((pkg, index) => (
             <SwiperSlide key={index}>

@@ -25,12 +25,12 @@ const DestinationHighlights = () => {
   const [playingIndex, setPlayingIndex] = useState(null);
 
   return (
-    <section className="px-4 md:px-8 py-12 bg-white font-dm">
+    <section className="px-4 md:px-8 lg:px-20 py-12 bg-white font-dm max-w-[1536px] mx-auto">
       <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8 text-center md:text-left">
         Destination <span className="text-[#EB662B]">Highlights</span>
       </h2>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {videos.map((item, index) =>
           item.type === "description" ? (
             <div
