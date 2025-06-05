@@ -89,11 +89,14 @@ export default function MostSearched() {
       >
         {cities.map((city, index) => (
           <SwiperSlide key={index}>
-            <div className="bg-white rounded-xl pl-4 py-4 my-5 shadow-md overflow-hidden flex sm:w-[90%] xl:w-full">
+            <div
+              className="bg-white rounded-xl pl-4 py-4 my-5 shadow-md overflow-hidden flex sm:w-[90%] 
+            md:w-[98%] xl:w-full"
+            >
               <img
                 src={city.image}
                 alt={city.name}
-                className="w-35 h-40 object-cover rounded-xl"
+                className="w-35 h-42 object-cover rounded-xl"
               />
               <div className="p-4 space-y-2">
                 <h3 className="text-lg font-semibold">{city.name}</h3>
@@ -102,7 +105,7 @@ export default function MostSearched() {
                   {city.rating}({city.reviews})
                 </div>
                 <div className="text-md font-semibold text-gray-800">
-                  {city.price}{" "}
+                  {city.price}
                   <span className="text-sm font-normal text-gray-500">
                     /night
                   </span>
