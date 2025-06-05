@@ -4,7 +4,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="w-[96%] max-w-[1536px] mx-auto px-3 sm:px-6 py-[14px] h-[73px] bg-gradient-to-r from-[#EAF0F04D]/30 via-[#EAF0F04D]/20 to-transparent backdrop-blur-[20px] left-1/2 -translate-x-1/2 rounded-xl flex items-center justify-between font-sansita fixed top-[21px] z-50">
+    <nav className="w-[98%] max-w-[1536px] mx-auto px-3 sm:px-6 py-[14px] h-[73px] bg-gradient-to-r from-[#EAF0F04D]/30 via-[#EAF0F04D]/20 to-transparent backdrop-blur-[20px] left-1/2 -translate-x-1/2 rounded-xl flex items-center justify-between font-sansita fixed top-[21px] z-50">
       {/* Logo & Brand */}
       <div className="flex items-center gap-2">
         <img src="logo.png" alt="Logo" className="w-8 h-8" />

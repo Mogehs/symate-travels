@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#fff2ed] text-gray-800 w-[98%] mx-auto rounded-2xl py-10 my-6 px-6 md:px-10">
+    <footer className="bg-[#fff2ed] text-gray-800 w-[98%] mx-auto rounded-2xl py-10 mt-6 mb-2 px-6 md:px-4">
       <div className="max-w-7xl mx-auto">
         <div className="">
           {/* Logo & Newsletter */}
