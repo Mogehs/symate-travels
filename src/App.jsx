@@ -13,6 +13,7 @@ import Destinations from "./components/Destinations";
 import CuratedPackages from "./components/CuratedPackages";
 import Map from "./components/Map";
 import DestinationHighlights from "./components/Destination";
+import ContactUs from "./components/ContactUs";
 
 const App = () => {
   return (
@@ -31,6 +32,7 @@ const App = () => {
         <Map />
         <Testimonials />
         <Destinations />
+        <ContactUs />
         <Footer />
       </div>
     </>

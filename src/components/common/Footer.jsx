@@ -2,17 +2,13 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#fff2ed] text-gray-800 w-[98%] mx-auto rounded-2xl py-10 mt-6 mb-2 px-6 md:px-20">
+    <footer className="bg-[#fff2ed] text-gray-800 w-[98%] mx-auto rounded-2xl py-10 mt-6 mb-2 px-4 lg:px-20">
       <div className="max-w-7xl mx-auto">
         <div className="">
           {/* Logo & Newsletter */}
           <div className="md:w-2/4">
-            <div className="flex items-center mb-4">
-              <img
-                src="/logo.png" // Replace with your logo path
-                alt="Logo"
-                className="w-15 h-15 mr-2"
-              />
+            <div className="flex items-center mb-4 lg:ml-9">
+              <img src="/logo.png" alt="Logo" className="w-15 h-15 mr-2" />
               <span className="font-semibold text-lg font-sansita">
                 Skymate Travels & Holidays
               </span>
