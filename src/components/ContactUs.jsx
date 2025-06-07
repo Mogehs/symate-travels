@@ -2,7 +2,7 @@ import { sendEmail } from "../utils/sendEmail";
 
 const ContactUs = () => {
   return (
-    <section className="px-4 md:px-6 lg:px-20 py-12 bg-white">
+    <section id="contact" className="px-4 md:px-6 lg:px-20 py-12 bg-white">
       <h2 className="text-5xl font-semibold text-gray-800 mb-8 font-dm">
         Let's <span className="text-[#EB662B]">Talk!</span>
       </h2>
