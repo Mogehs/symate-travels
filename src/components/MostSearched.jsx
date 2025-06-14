@@ -1,9 +1,10 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import { CircleArrowLeft, CircleArrowRight } from "lucide-react";
+import BookingForm from "./BookingForm";
 
 const cities = [
   {
@@ -39,6 +40,8 @@ const cities = [
 export default function MostSearched() {
   const prevRef = useRef(null);
   const nextRef = useRef(null);
+  const [isBookingOpen, setIsBookingOpen] = useState(false);
+  const [selectedCity, setSelectedCity] = useState("");
 
   return (
     <section className="py-12 bg-gray-100 my-10 font-dm px-6 md:px-12 lg:px-20">
@@ -109,15 +112,29 @@ export default function MostSearched() {
                   <span className="text-sm font-normal text-gray-500">
                     /night
                   </span>
-                </div>
-                <button className="mt-2 px-4 py-1 bg-[#EB662B] text-white rounded-md hover:bg-[#EB662B] text-sm">
+                </div>{" "}
+                <button
+                  onClick={() => {
+                    setSelectedCity(city.name);
+                    setIsBookingOpen(true);
+                  }}
+                  className="mt-2 px-4 py-1 bg-[#EB662B] text-white rounded-md hover:bg-[#d05a26] transition-colors text-sm"
+                >
                   Book Now
                 </button>
               </div>
             </div>
           </SwiperSlide>
-        ))}
+        ))}{" "}
       </Swiper>
+
+      {/* Booking Form Modal */}
+      {isBookingOpen && (
+        <BookingForm
+          onClose={() => setIsBookingOpen(false)}
+          packageName={selectedCity}
+        />
+      )}
     </section>
   );
 }
