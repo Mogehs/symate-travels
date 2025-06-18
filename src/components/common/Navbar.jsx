@@ -15,8 +15,36 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeLink, setActiveLink] = useState("home");
+  const [navHeight, setNavHeight] = useState(78); // Default height
+
+  // Smooth scroll function with navbar offset
+  const scrollToSection = (sectionId, event) => {
+    if (event) event.preventDefault();
+
+    const section = document.getElementById(sectionId);
+    if (!section) return;
+
+    const navbarOffset = navHeight + 20; // Add extra padding
+    const sectionTop = section.getBoundingClientRect().top + window.scrollY;
+
+    window.scrollTo({
+      top: sectionTop - navbarOffset,
+      behavior: "smooth",
+    });
+
+    // Update active link
+    setActiveLink(sectionId);
+    if (isOpen) setIsOpen(false);
+  };
+
   // Handle scroll effects and active section detection
   useEffect(() => {
+    // Get navbar height for dynamic offset calculation
+    const navbar = document.querySelector("nav");
+    if (navbar) {
+      setNavHeight(navbar.offsetHeight);
+    }
+
     const handleScroll = () => {
       // Update navbar style based on scroll position
       if (window.scrollY > 100) {
@@ -90,9 +118,8 @@ const Navbar = () => {
       <div className="hidden lg:flex gap-8 text-gray-700 text-sm mr-5 font-dm items-center">
         <a
           href="#"
-          onClick={() => {
-            setIsOpen(false);
-            setActiveLink("home");
+          onClick={(e) => {
+            scrollToSection("home", e);
           }}
           className={`relative flex items-center gap-2 group py-2 px-3 rounded-full hover:bg-white/60 transition-all duration-300 ${
             activeLink === "home" ? "bg-white/70 shadow-sm" : ""
@@ -104,9 +131,8 @@ const Navbar = () => {
         </a>
         <a
           href="#about"
-          onClick={() => {
-            setIsOpen(false);
-            setActiveLink("about");
+          onClick={(e) => {
+            scrollToSection("about", e);
           }}
           className={`relative flex items-center gap-2 group py-2 px-3 rounded-full hover:bg-white/60 transition-all duration-300 ${
             activeLink === "about" ? "bg-white/70 shadow-sm" : ""
@@ -118,9 +144,8 @@ const Navbar = () => {
         </a>
         <a
           href="#testimonials"
-          onClick={() => {
-            setIsOpen(false);
-            setActiveLink("testimonials");
+          onClick={(e) => {
+            scrollToSection("testimonials", e);
           }}
           className={`relative flex items-center gap-2 group py-2 px-3 rounded-full hover:bg-white/60 transition-all duration-300 ${
             activeLink === "testimonials" ? "bg-white/70 shadow-sm" : ""
@@ -132,9 +157,8 @@ const Navbar = () => {
         </a>
         <a
           href="#contact"
-          onClick={() => {
-            setIsOpen(false);
-            setActiveLink("contact");
+          onClick={(e) => {
+            scrollToSection("contact", e);
           }}
           className={`relative flex items-center gap-2 group py-2 px-3 rounded-full hover:bg-white/60 transition-all duration-300 ${
             activeLink === "contact" ? "bg-white/70 shadow-sm" : ""
@@ -147,14 +171,10 @@ const Navbar = () => {
       </div>{" "}
       {/* Book Now Button with Animation */}
       <div className="hidden lg:flex items-center font-dm">
+        {" "}
         <a
           href="#"
-          onClick={() => {
-            // Scroll to booking section or open modal
-            document
-              .querySelector("#contact")
-              .scrollIntoView({ behavior: "smooth" });
-          }}
+          onClick={(e) => scrollToSection("contact", e)}
           className="relative overflow-hidden group px-5 py-2.5 rounded-full bg-gradient-to-r from-[#EB662B] to-[#ff8a3d] text-white text-sm font-medium shadow-lg shadow-orange-200/30 hover:shadow-orange-300/40 transition-all duration-300"
         >
           <span className="flex items-center gap-2 relative z-10">
@@ -169,20 +189,15 @@ const Navbar = () => {
       </div>{" "}
       {/* Animated Hamburger Icon */}
       <div className="lg:hidden flex items-center gap-3">
+        {" "}
         <a
           href="#"
-          onClick={(e) => {
-            e.preventDefault();
-            document
-              .querySelector("#contact")
-              .scrollIntoView({ behavior: "smooth" });
-          }}
+          onClick={(e) => scrollToSection("contact", e)}
           className="flex items-center gap-1 bg-gradient-to-r from-[#EB662B] to-[#ff8a3d] text-white text-xs px-3 py-1.5 rounded-full shadow-md"
         >
           <Compass className="w-3 h-3" />
           <span>Book</span>
         </a>
-
         <button
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle Menu"
@@ -217,9 +232,8 @@ const Navbar = () => {
             <a
               href="#"
               className="flex items-center gap-3 px-5 py-3 hover:bg-orange-50 transition-colors text-gray-700 text-sm"
-              onClick={() => {
-                setIsOpen(false);
-                setActiveLink("home");
+              onClick={(e) => {
+                scrollToSection("home", e);
               }}
             >
               <div className="w-8 flex justify-center">
@@ -230,9 +244,8 @@ const Navbar = () => {
             <a
               href="#about"
               className="flex items-center gap-3 px-5 py-3 hover:bg-orange-50 transition-colors text-gray-700 text-sm"
-              onClick={() => {
-                setIsOpen(false);
-                setActiveLink("about");
+              onClick={(e) => {
+                scrollToSection("about", e);
               }}
             >
               <div className="w-8 flex justify-center">
@@ -243,9 +256,8 @@ const Navbar = () => {
             <a
               href="#testimonials"
               className="flex items-center gap-3 px-5 py-3 hover:bg-orange-50 transition-colors text-gray-700 text-sm"
-              onClick={() => {
-                setIsOpen(false);
-                setActiveLink("testimonials");
+              onClick={(e) => {
+                scrollToSection("testimonials", e);
               }}
             >
               <div className="w-8 flex justify-center">
@@ -256,9 +268,8 @@ const Navbar = () => {
             <a
               href="#contact"
               className="flex items-center gap-3 px-5 py-3 hover:bg-orange-50 transition-colors text-gray-700 text-sm"
-              onClick={() => {
-                setIsOpen(false);
-                setActiveLink("contact");
+              onClick={(e) => {
+                scrollToSection("contact", e);
               }}
             >
               <div className="w-8 flex justify-center">
@@ -269,10 +280,11 @@ const Navbar = () => {
           </div>
 
           <div className="p-4 bg-gradient-to-br from-orange-50 to-white border-t border-orange-100/30">
+            {" "}
             <a
               href="#contact"
               className="flex items-center justify-center gap-2 w-full py-2.5 bg-gradient-to-r from-[#EB662B] to-[#ff8a3d] text-white rounded-lg shadow-md"
-              onClick={() => setIsOpen(false)}
+              onClick={(e) => scrollToSection("contact", e)}
             >
               <Compass size={16} />
               Book Your Adventure

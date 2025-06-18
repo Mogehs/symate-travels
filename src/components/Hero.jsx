@@ -48,7 +48,10 @@ const Hero = () => {
 
   return (
     <div className="max-w-[1536px] mx-auto">
-      <div className="relative h-screen max-h-[800px] min-h-[600px]">
+      <section
+        id="home"
+        className="relative h-screen max-h-[800px] min-h-[600px]"
+      >
         {/* Overlay gradient for better text visibility */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/20 to-transparent z-10"></div>
 
@@ -84,7 +87,14 @@ const Hero = () => {
                 Book Your Journey
               </button>
 
-              <button className="bg-white/20 backdrop-blur-md border border-white/30 text-white px-8 py-4 rounded-md text-base font-semibold hover:bg-white/30 transition-colors flex items-center gap-2">
+              <button
+                onClick={() =>
+                  document
+                    .getElementById("top-package")
+                    .scrollIntoView({ behavior: "smooth" })
+                }
+                className="bg-white/20 backdrop-blur-md border border-white/30 text-white px-8 py-4 rounded-md text-base font-semibold hover:bg-white/30 transition-colors flex items-center gap-2"
+              >
                 Explore Destinations
                 <ChevronRight size={18} />
               </button>
@@ -119,7 +129,7 @@ const Hero = () => {
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
       {/* Booking Form Modal */}
       {isModalOpen && <BookingForm onClose={() => setIsModalOpen(false)} />}

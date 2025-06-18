@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import BookingForm from "./BookingForm";
 
 const packages = [
   {
@@ -84,10 +85,11 @@ const packages = [
   },
 ];
 
-const renderPackageCard = (pkg, index) => (
+const renderPackageCard = (pkg, index, openBookingForm) => (
   <div
     key={index}
-    className="bg-[#F6F6F6] overflow-hidden hover:shadow-lg transition-shadow duration-300"
+    className="bg-[#F6F6F6] overflow-hidden hover:shadow-lg transition-shadow duration-300 cursor-pointer"
+    onClick={() => openBookingForm(pkg.title)}
   >
     <img src={pkg.image} alt={pkg.title} className="w-full h-50 object-cover" />
     <div className="p-4 space-y-1">
@@ -111,20 +113,41 @@ const renderPackageCard = (pkg, index) => (
           {pkg.country}
         </span>
       </div>
+      {/* <div className="mt-3 text-center">
+        <button className="text-[#EB662B] font-medium text-sm hover:text-[#d05a26] transition-colors">
+          Book Now
+        </button>
+      </div> */}
     </div>
   </div>
 );
 
 export default function TopPackages() {
+  const [isBookingOpen, setIsBookingOpen] = useState(false);
+  const [selectedPackage, setSelectedPackage] = useState("");
+
+  const openBookingForm = (packageTitle) => {
+    setSelectedPackage(packageTitle);
+    setIsBookingOpen(true);
+  };
+
   return (
-    <section className="px-6 lg:px-20 py-10 bg-white font-dm">
+    <section id="top-package" className="px-6 lg:px-20 py-10 bg-white font-dm">
       <h2 className="text-2xl sm:text-3xl font-semibold mb-10 text-gray-800">
         Top Package <span className="text-[#EB662B]">Destinations</span>
-      </h2>
-
+      </h2>{" "}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-6">
-        {packages.map(renderPackageCard)}
+        {packages.map((pkg, index) =>
+          renderPackageCard(pkg, index, openBookingForm)
+        )}
       </div>
+      {/* Booking Form Modal */}
+      {isBookingOpen && (
+        <BookingForm
+          onClose={() => setIsBookingOpen(false)}
+          packageName={selectedPackage}
+        />
+      )}
     </section>
   );
 }
