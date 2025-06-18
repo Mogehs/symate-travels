@@ -25,8 +25,31 @@ const ContactUs = () => {
           </h2>
           <p className="text-gray-600 mb-6">
             A warm and inviting title that fits perfectly with travel services.
-          </p>
+          </p>{" "}
           <form className="space-y-4" onSubmit={sendEmail}>
+            {/* FormSubmit honeypot field to prevent spam */}
+            <input type="text" name="_honey" style={{ display: "none" }} />
+
+            {/* Disable captcha */}
+            <input type="hidden" name="_captcha" value="false" />
+
+            {/* Form subject */}
+            <input
+              type="hidden"
+              name="_subject"
+              value="New Contact Form Inquiry"
+            />
+
+            {/* Redirect URL after submission - comment out if not needed */}
+            {/* <input type="hidden" name="_next" value="https://your-website.com/thank-you" /> */}
+
+            {/* Time */}
+            <input
+              type="hidden"
+              name="time"
+              value={new Date().toLocaleString()}
+            />
+
             <input
               type="text"
               name="name"
@@ -53,11 +76,6 @@ const ContactUs = () => {
               rows={4}
               className="w-full border border-gray-300 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-[#EB662B]"
             ></textarea>
-            <input
-              type="hidden"
-              name="time"
-              value={new Date().toLocaleString()}
-            />
             <button
               type="submit"
               className="w-full bg-[#DD5471] hover:bg-[#DD5471]/80 text-white py-3 rounded-md font-semibold transition cursor-pointer"

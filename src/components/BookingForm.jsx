@@ -30,14 +30,25 @@ const BookingForm = ({
           >
             <X size={24} />
           </button>
-        </div>
-
+        </div>{" "}
         {/* Modal Body */}
         <div className="p-6">
           <form
             onSubmit={handleSubmit}
             className="grid grid-cols-1 md:grid-cols-2 gap-6"
           >
+            {/* FormSubmit honeypot field to prevent spam */}
+            <input type="text" name="_honey" style={{ display: "none" }} />
+            {/* Disable captcha */}
+            <input type="hidden" name="_captcha" value="false" />
+            {/* Form subject */}
+            <input type="hidden" name="_subject" value="New Booking Request" />
+            {/* Time */}
+            <input
+              type="hidden"
+              name="submission_time"
+              value={new Date().toLocaleString()}
+            />
             {/* Name */}
             <div className="flex flex-col">
               <label
